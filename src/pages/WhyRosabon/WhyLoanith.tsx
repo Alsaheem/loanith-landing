@@ -1,7 +1,7 @@
 import React from "react";
 
 const WhyLoanith = () => {
-  return;
+  return <div className="">Why</div>
 };
 
 export default WhyLoanith;
