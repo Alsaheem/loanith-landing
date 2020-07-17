@@ -6,7 +6,7 @@ const Navbar = () => {
     <div className="">
       <nav className="navbar navbar-expand-lg navbar-light bg_loanith ">
       <a className="navbar-brand" href="#">
-  <img src="./assets/loanith-logo.png" width={200} height={40}  loading="lazy" />
+  <img src="./assets/loanith-logo.png" width={155} height={40}  loading="lazy" />
 </a>
 
         <button
