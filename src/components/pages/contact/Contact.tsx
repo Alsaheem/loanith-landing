@@ -12,10 +12,10 @@ const { TextArea } = Input;
 const Contact = () => {
 
     return (
-        <Layout>
-            <Content >
-                <div className='wrapper'>
-                    <h3 className="header--wrapper">GET IN TOUCH</h3>
+  
+           
+                <div className='wrapper-contact'>
+                    <h3 className="header--wrapper-contact">GET IN TOUCH</h3>
                     <Row>
                         <Col span={12}>
                             <div className='rightSide'>
@@ -52,9 +52,7 @@ const Contact = () => {
                         </Col>
                     </Row>
                 </div>
-
-            </Content>
-        </Layout>
+      
     )
 }
 
