@@ -24,30 +24,30 @@ const Navbar = () => {
           <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
             <li className="nav-item active">
               <a className="nav-link text-white" href="#">
-                Why Loanith 
+                Why Loanith
               </a>
             </li>
             <li className="nav-item active">
               <a className="nav-link text-white" href="#">
-                Blog 
+                Blog
               </a>
             </li>
             <li className="nav-item active">
               <a className="nav-link text-white" href="#">
-                Contact Us 
+                Contact Us
               </a>
             </li>
             <li className="nav-item active">
               <a className="nav-link text-white" href="#">
-                Support 
+                Support
               </a>
             </li>
             <li className="nav-item active">
               <a className="nav-link p-2 rounded bg-white" href="#">
-                Leaderboard 
+                Leaderboard
               </a>
             </li>
-           
+
           </ul>
         </div>
       </nav>
