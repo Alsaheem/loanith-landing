@@ -1,11 +1,11 @@
 import React from "react";
-import Layout from "../../components/Layout/Layout";
+import Layout from "../../common/Layout/Layout";
 import "./Home.css";
 
 const Home = () => {
   return (
     <div className="">
-      <Layout>
+  
         <div className=" hero_section bg_loanith">
           <div className="container pt-5">
             <div className="row pt-5">
@@ -69,7 +69,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </Layout>
+
     </div>
   );
 };

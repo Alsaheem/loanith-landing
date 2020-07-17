@@ -1,10 +1,10 @@
 import React from "react";
-import Layout from "../../components/Layout/Layout";
+import Layout from "../../common/Layout/Layout";
 
 const WhyLoanith = () => {
   return (
     <div className="">
-      <Layout>Why Loanith</Layout>
+      <h3>Why Loanith</h3>
     </div>
   );
 };
