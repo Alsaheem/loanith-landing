@@ -29,9 +29,9 @@ const Footer = () => {
         <div className="col-3">
           <ul>
             <li className='text_loanith font-weight-bold'>Follow us</li>
-            <li>Linkedin</li>
-            <li>Facebook</li>
-            <li>Twitter</li>
+            <li> <a className='text-w' href="">Linkedin</a> </li>
+            <li><a className='text-w' target='_blank' href="https://www.facebook.com/myloanith">Facebook</a></li>
+            <li><a className='text-w' target='_blank' href="https://www.instagram.com/myloanith">Twitter</a></li>
           </ul>
         </div>
         <div className="col-3">

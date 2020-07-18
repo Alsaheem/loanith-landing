@@ -69,10 +69,7 @@ const Home = () => {
             />
             <h4>Pay Bills</h4>
             <p className="pt-4">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Temporibus architecto saepe tempora quos dignissimos, itaque
-              quaerat enim facilis fugiat maiores doloribus quidem perferendis
-              dolorum delectus iure natus laudantium! A, quis?
+            Finished your Airtime, Data, Electricity, and Cable TV subscription, Loanith ensures you stay connected.
             </p>
           </div>
         </div>
@@ -155,7 +152,7 @@ const Home = () => {
         <div className="container">
           <div className="d-flex justify-content-center mb-2">
             <hr className="liner"></hr>
-            <div className="font-weight-bold"> <h5 className='text-center'>Tips From Knowledge Center</h5></div>
+            <div className="font-weight-bold"> <h5 className='text-center'>Knowledge Center</h5></div>
             <hr className="liner"></hr>
           </div>
           <br/>
@@ -167,7 +164,7 @@ const Home = () => {
                 alt=""
               />
               <div className="card-body">
-                <h5 className="card-title">Card title</h5>
+                <h5 className="card-title">Saving The Right Way ?</h5>
                 <p className="card-text">
                   This is a wider card with supporting text below as a natural
                   lead-in to additional content. This card has even longer
@@ -184,7 +181,7 @@ const Home = () => {
                 alt=""
               />
               <div className="card-body">
-                <h5 className="card-title">Card title</h5>
+                <h5 className="card-title">What is Credit Score ?</h5>
                 <p className="card-text">
                   This is a wider card with supporting text below as a natural
                   lead-in to additional content. This card has even longer
@@ -201,7 +198,7 @@ const Home = () => {
                 alt=""
               />
               <div className="card-body">
-                <h5 className="card-title">Card title</h5>
+                <h5 className="card-title">5 Tips Why You Should Invest ?</h5>
                 <p className="card-text">
                   This is a wider card with supporting text below as a natural
                   lead-in to additional content. This card has even longer
