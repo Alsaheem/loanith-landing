@@ -34,4 +34,7 @@
         width: 150px;
         height: 61.84px;
     }
+    body{
+        overflow-x: hidden;
+    }
   }
