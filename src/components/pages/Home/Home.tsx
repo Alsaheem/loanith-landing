@@ -1,5 +1,4 @@
 import React from "react";
-import Layout from "../../common/Layout/Layout";
 import "./Home.css";
 
 const Home = () => {
@@ -9,8 +8,8 @@ const Home = () => {
         <div className=" hero_section bg_loanith">
           <div className="container pt-5">
             <div className="row pt-5">
-              <div className="col-5 text-white">
-                <h1>
+              <div className="col-5 text-w">
+                <h1 className='text-w'>
                   There is a beter way to get funds for family and business
                   needs
                 </h1>
