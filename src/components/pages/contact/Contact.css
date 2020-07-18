@@ -1,12 +1,21 @@
+.wrapper-contact{
+margin: auto 12%;
 
-/* .wrapper{
+}
+.banner-contact{
+    height: 200px;
+    background-image: url(../../../assets/contact.png);
+    background-position: center;
+    background-size: cover;
+}
+/* .wrapper-contact{
     margin-left: 8em;
     margin-right: 8em;
     margin-top: 4em;
     margin-bottom: 4em;
     min-height: 70vh;
 } */
-.header--wrapper{
+.header--wrapper-contact{
     margin: 2em 0;
     font-weight: 700;
     font-size: 24;
@@ -29,4 +38,4 @@
    border: none !important;
    color: black !important;
    align-content: left !important;
-}
+} 

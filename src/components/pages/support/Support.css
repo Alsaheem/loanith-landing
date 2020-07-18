@@ -1,0 +1,6 @@
+.banner-support{
+    height: 200px;
+    background-image: url(../../../assets/support.png);
+    background-position: center;
+    background-size: cover;
+}
