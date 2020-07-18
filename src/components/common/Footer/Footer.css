@@ -11,3 +11,7 @@ li{
     background-color: #2F2E41;
     color: white;
 }
+
+a{
+    color: white !important;
+}

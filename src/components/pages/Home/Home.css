@@ -24,3 +24,14 @@
       border: 1px solid #E96B03;
       width: 30%;
   }
+
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .main_img{
+        display: none
+    }
+    .btn_action{
+        width: 150px;
+        height: 61.84px;
+    }
+  }

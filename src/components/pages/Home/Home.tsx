@@ -7,7 +7,7 @@ const Home = () => {
       <div className=" hero_section bg_loanith">
         <div className="container pt-5">
           <div className="row pt-5">
-            <div className="col-5 text-w">
+            <div className="col-md-5 text-w">
               <h1 className="text-w">
               No matter your circle, Loanith got you covered.
               </h1>
@@ -19,15 +19,15 @@ const Home = () => {
 
               <div className="d-flex justify-content-between">
                 <div className="">
-                  <img src="./assets/googleBadge.png" loading="lazy" />
+                  <img className="btn_action" src="./assets/googleBadge.png" loading="lazy" />
                 </div>
                 <div className="">
-                  <img src="./assets/appBadge.png" loading="lazy" />
+                  <img className="btn_action" src="./assets/appBadge.png" loading="lazy" />
                 </div>
               </div>
             </div>
-            <div className="col-2"></div>
-            <div className="col-5">
+            <div className="col-md-2"></div>
+            <div className="col-md-5 main_img">
               <img src="./assets/main-logo.png" alt="" />
             </div>
           </div>
@@ -36,7 +36,7 @@ const Home = () => {
       <div className="our-solution container mt-5">
         <h2 className="text-center mb-4">OUR SOLUTION FOR YOUR NEEDS</h2>
         <div className="row">
-          <div className="col-4 text-center">
+          <div className="col-md-4 text-center">
             <img
               src="./assets/money-bag.png"
               loading="lazy"
@@ -48,7 +48,7 @@ const Home = () => {
             Transfer funds to your bank account for your personal use online and offline.
             </p>
           </div>
-          <div className="col-4 text-center">
+          <div className="col-md-4 text-center">
             <img
               src="./assets/bank-building.png"
               loading="lazy"
@@ -60,7 +60,7 @@ const Home = () => {
             Owing someone? It shouldn't be embarrassing. Pay them off now using credit from Loanith.
             </p>
           </div>
-          <div className="col-4 text-center">
+          <div className="col-md-4 text-center">
             <img
               src="./assets/shopping-cart.png"
               loading="lazy"
@@ -82,7 +82,7 @@ const Home = () => {
           <form>
             <div className="form-row align-items-center pt-4">
               <div className="col-1"></div>
-              <div className="col-4">
+              <div className="col-md-4">
                 <input
                   type="text"
                   className="form-control mb-2"
@@ -90,7 +90,7 @@ const Home = () => {
                   placeholder="Enter Your Name"
                 />
               </div>
-              <div className="col-4">
+              <div className="col-md-4">
                 <div className="input-group mb-2">
                   <input
                     type="text"
@@ -100,7 +100,7 @@ const Home = () => {
                   />
                 </div>
               </div>
-              <div className="col-2">
+              <div className="col-md-2">
                 <button type="submit" className="btn loanith_button mb-2">
                   Submit
                 </button>
