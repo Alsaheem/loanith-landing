@@ -35,6 +35,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="col-3">
+          <form action="">
           <ul>
             <li className='text_loanith font-weight-bold'>Support</li>
             <li>
@@ -52,7 +53,9 @@ const Footer = () => {
                 rows={3}
               />
             </li>
+            <li><button className="bg_loanith btn mt-2">Submit</button></li>
           </ul>
+          </form>
         </div>
       </div>
       <div className="bgg_footer p-2">
