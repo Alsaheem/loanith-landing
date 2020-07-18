@@ -9,7 +9,7 @@ const Home = () => {
           <div className="row pt-5">
             <div className="col-5 text-w">
               <h1 className="text-w">
-                There is a beter way to get funds for family and business needs
+                There is a better way to get funds for family and business needs
               </h1>
               <br />
               <p className="lead">
