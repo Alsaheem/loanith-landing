@@ -32,7 +32,9 @@ const Support = () => {
 
         <div>
 
-
+<div className="banner-support">
+                {/* <img src="./assets/contact.png" height={200} width={'100%'}loading="lazy"/> */}
+            </div>
             <div className={'header--wrapper-leaders'}>
                 <p className={'header--wrapper--text-leaders'}>Frequently Asked Questions</p>
             </div>

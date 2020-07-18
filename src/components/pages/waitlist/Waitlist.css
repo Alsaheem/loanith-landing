@@ -75,3 +75,7 @@ table, th, td {
   th {
     text-align: left;
   }
+
+  .second-div{
+      padding: 80px;
+  }

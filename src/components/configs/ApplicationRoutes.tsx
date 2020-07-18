@@ -6,7 +6,9 @@ import Contact from '../pages/contact/Contact';
 import Support from '../pages/support/Support';
 import Waitlist from '../pages/waitlist/Waitlist';
 import LeaderBoard from '../pages/leaderboard/LeaderBoard';
-import Layout from '../common/Layout/Layout'
+import Layout from '../common/Layout/Layout';
+import Privacy from '../pages/privacy/Privacy';
+import Terms from '../pages/terms/Terms';
 
 const ApplicationRoutes = () => {
     return(  
@@ -19,6 +21,8 @@ const ApplicationRoutes = () => {
           <Route path="/support" component={Support} />
           <Route path="/waitlist" component={Waitlist} />
           <Route path="/leaders" component={LeaderBoard} />
+          <Route path="/privacy" component={Privacy} />
+          <Route path="/terms" component={Terms} />
         </Switch>
       </Layout>
 
