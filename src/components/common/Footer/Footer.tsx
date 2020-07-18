@@ -49,8 +49,6 @@ const Footer = () => {
                 className="form-control"
                 name=""
                 id=""
-                cols={30}
-                rows={3}
               />
             </li>
             <li><button className="bg_loanith btn mt-2">Submit</button></li>
