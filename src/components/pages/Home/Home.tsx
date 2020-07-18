@@ -1,5 +1,6 @@
 import React from "react";
 import "./Home.css";
+import Footer from "../../common/Footer/Footer";
 
 const Home = () => {
   return (
@@ -163,6 +164,11 @@ const Home = () => {
       <br />
       <div className="blog mt-5">
         <div className="container">
+          <div className="d-flex">
+            <div className="liner"></div>
+            <div className="font-weight-bold">From Our Blog</div>
+            <div className="liner"></div>
+          </div>
           <div className="card-deck">
             <div className="card">
               <img
