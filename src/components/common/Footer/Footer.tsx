@@ -2,7 +2,7 @@ import React from "react";
 import "./Footer.css";
 const Footer = () => {
   return (
-    <div className="bg_footer container-fluid p-2">
+    <div className="bg_footer container-fluid p-2 mt-4">
       <img
         src="./assets/loanith-logo.png"
         width={155}

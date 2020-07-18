@@ -168,6 +168,7 @@ const Home = () => {
             <div className="font-weight-bold"> <h5 className='text-center'> From Our Blog</h5></div>
             <hr className="liner"></hr>
           </div>
+          <br/>
           <div className="card-deck">
             <div className="card">
               <img
