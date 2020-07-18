@@ -7,7 +7,6 @@ const Navbar = () => {
     <div className="">
       <nav className="navbar navbar-expand-lg navbar-light bg_loanith ">
         <Link to="/">
-          {" "}
           <a className="navbar-brand">
             <img
               src="./assets/loanith-logo.png"
@@ -52,7 +51,7 @@ const Navbar = () => {
             </li>
             <li className="nav-item active">
               <Link to="/leaderboard">
-                <a className="nav-link p-2 rounded bg-white">Leaderboard</a>
+                <a className="nav-link p-2 rounded bg-white text_loanith">Leaderboard</a>
               </Link>
             </li>
           </ul>
