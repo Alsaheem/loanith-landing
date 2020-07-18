@@ -155,7 +155,7 @@ const Home = () => {
         <div className="container">
           <div className="d-flex justify-content-center mb-2">
             <hr className="liner"></hr>
-            <div className="font-weight-bold"> <h5 className='text-center'> From Our Blog</h5></div>
+            <div className="font-weight-bold"> <h5 className='text-center'>Tips From Knowledge Center</h5></div>
             <hr className="liner"></hr>
           </div>
           <br/>

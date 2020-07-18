@@ -23,13 +23,13 @@ const Footer = () => {
           <ul>
             <li className='text_loanith font-weight-bold'>Download The App</li>
             <li>Google Playstore</li>
-            <li>Apple AppleStore</li>
+            <li>Apple App Store</li>
           </ul>
         </div>
         <div className="col-3">
           <ul>
             <li className='text_loanith font-weight-bold'>Follow us</li>
-            <li>linkdin</li>
+            <li>Linkedin</li>
             <li>Facebook</li>
             <li>Twitter</li>
           </ul>
