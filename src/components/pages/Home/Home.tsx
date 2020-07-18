@@ -164,10 +164,10 @@ const Home = () => {
       <br />
       <div className="blog mt-5">
         <div className="container">
-          <div className="d-flex">
-            <div className="liner"></div>
-            <div className="font-weight-bold">From Our Blog</div>
-            <div className="liner"></div>
+          <div className="d-flex justify-content-center mb-2">
+            <hr className="liner"></hr>
+            <div className="font-weight-bold"> <h5 className='text-center'> From Our Blog</h5></div>
+            <hr className="liner"></hr>
           </div>
           <div className="card-deck">
             <div className="card">

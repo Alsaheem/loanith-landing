@@ -19,3 +19,8 @@
   .card{
       border: none;
   }
+
+  .liner{
+      border: 1px solid #E96B03;
+      width: 43%;
+  }
