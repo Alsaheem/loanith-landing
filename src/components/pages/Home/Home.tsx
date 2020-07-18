@@ -1,6 +1,5 @@
 import React from "react";
 import "./Home.css";
-import Footer from "../../common/Footer/Footer";
 
 const Home = () => {
   return (
@@ -174,7 +173,7 @@ const Home = () => {
               <img
                 src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
                 className="card-img-top img-fluid"
-                alt="..."
+                alt=""
               />
               <div className="card-body">
                 <h5 className="card-title">Card title</h5>
@@ -191,7 +190,7 @@ const Home = () => {
               <img
                 src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
                 className="card-img-top img-fluid"
-                alt="..."
+                alt=""
               />
               <div className="card-body">
                 <h5 className="card-title">Card title</h5>
@@ -208,7 +207,7 @@ const Home = () => {
               <img
                 src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
                 className="card-img-top img-fluid"
-                alt="..."
+                alt=""
               />
               <div className="card-body">
                 <h5 className="card-title">Card title</h5>

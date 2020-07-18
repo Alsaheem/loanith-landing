@@ -7,8 +7,8 @@ const PrivacyPolicy = () => {
     return (
         <div className="wrapper-privacy">
             <div className="wrapper-privacy-child">
-                <div className={'header--wrapper-leaders'}>
-                    <p className={'header--wrapper--text-leaders'}> PRIVACY POLICY</p>
+                <div className='header--wrapper-leaders'>
+                    <p className='header--wrapper--text-leaders' > PRIVACY POLICY</p>
                 </div>
                 <div>
                     <div>

@@ -35,12 +35,12 @@ const Support = () => {
 <div className="banner-support">
                 {/* <img src="./assets/contact.png" height={200} width={'100%'}loading="lazy"/> */}
             </div>
-            <div className={'header--wrapper-leaders'}>
-                <p className={'header--wrapper--text-leaders'}>Frequently Asked Questions</p>
+            <div className='header--wrapper-leaders'>
+                <p className='header--wrapper--text-leaders'>Frequently Asked Questions</p>
             </div>
-            <div className={'leader--position'}>
-                <div className={'leader--position--child'}>
-                    <div className={'leader--position--child-content'}>
+            <div className='leader--position'>
+                <div className='leader--position--child'>
+                    <div className='leader--position--child-content'>
                         <div style={{border: 'none'}}>
                             <Collapse accordion>
                                 <Panel header="This is panel header 1" key="1">
@@ -58,12 +58,12 @@ const Support = () => {
                     </div>
                 </div>
             </div>
-            <div className={'header--wrapper-leaders'}>
-                <p className={'header--wrapper--text-leaders'}>Still Have a Question? Ask  support</p>
+            <div className='header--wrapper-leaders'>
+                <p className='header--wrapper--text-leaders'>Still Have a Question? Ask  support</p>
             </div>
-            <div className={'leader--position'}>
-                <div className={'leader--position--child'}>
-                    <div className={'leader--position--child-content'}>
+            <div className='leader--position'>
+                <div className='leader--position--child'>
+                    <div className='leader--position--child-content'>
                         <div>
                             <div>
                                 <Input placeholder="Name in full" allowClear />

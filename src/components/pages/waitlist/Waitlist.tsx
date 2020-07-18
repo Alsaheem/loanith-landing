@@ -56,13 +56,13 @@ Encourage your friends to invite others to join the waitlist. You earn 10 points
                 </Row>
                 </div>
             </div>
-            <div className={'header--wrapper'}>
-                <p className={'header--wrapper--text'}>Join Wait 
+            <div className='header--wrapper'>
+                <p className='header--wrapper--text'>Join Wait 
                 list</p>
             </div>
-            <div className={'leader--position'}>
+            <div className='leader--position'>
  
-                <div className={''}>
+                <div className=''>
 
                 <Card style={{ width: 400 }} className='card-style'>
                         <Input placeholder="Name in full"  className='inputStyle'/>

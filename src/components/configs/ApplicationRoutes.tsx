@@ -20,7 +20,7 @@ const ApplicationRoutes = () => {
           <Route path="/contact" component={Contact} />
           <Route path="/support" component={Support} />
           <Route path="/waitlist" component={Waitlist} />
-          <Route path="/leaders" component={LeaderBoard} />
+          <Route path="/leaderboard" component={LeaderBoard} />
           <Route path="/privacy" component={Privacy} />
           <Route path="/terms" component={Terms} />
         </Switch>

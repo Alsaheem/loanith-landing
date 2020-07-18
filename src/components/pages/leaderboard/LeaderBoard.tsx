@@ -43,37 +43,37 @@ const columns = [
 const LeaderBoard = () => {
     return (
         <div>
-            <div className={'header--wrapper-leaders'}>
-                <p className={'header--wrapper--text-leaders'}>Your Position</p>
+            <div className='header--wrapper-leaders'>
+                <p className='header--wrapper--text-leaders'>Your Position</p>
             </div>
-            <div className={'leader--position'}>
-                <div className={'leader--position--child'}>
-                    <div className={'leader--position--child-content'}>
+            <div className='leader--position'>
+                <div className='leader--position--child'>
+                    <div className='leader--position--child-content'>
                         <p>Enter your email address to check your position</p>
-                        <p><Input size="large" type='email' placeholder={'email address of your friend'} style={{ width: '60%', height: '40px' }} /></p>
+                        <p><Input size="large" type='email' placeholder='email address of your friend' style={{ width: '60%', height: '40px' }} /></p>
                          <p><span className='btn'>Send</span></p>
 
                     </div>
                 </div>
             </div>
-            <div className={'header--wrapper-leaders'}>
-                <p className={'header--wrapper--text-leaders'}>Invite a Friend</p>
+            <div className='header--wrapper-leaders'>
+                <p className='header--wrapper--text-leaders'>Invite a Friend</p>
             </div>
-            <div className={'leader--position'}>
-                <div className={'leader--position--child-two'}>
-                <div className={'leader--position--child-content'}>
-                    <p><Input placeholder={'email address of your friend'} style={{ width: '50%', height: '40px' }} /> <span className='btn-sm' onClick={() => alert()}>Invite</span></p>
-                    <p><Input value={'tinyurl/code'} style={{ width: '50%', height: '40px' }} /> <span className='btn-sm' onClick={() => alert()}>Copy</span></p>
+            <div className='leader--position'>
+                <div className='leader--position--child-two'>
+                <div className='leader--position--child-content'>
+                    <p><Input placeholder='email address of your friend' style={{ width: '50%', height: '40px' }} /> <span className='btn-sm' onClick={() => alert()}>Invite</span></p>
+                    <p><Input value='tinyurl/code' style={{ width: '50%', height: '40px' }} /> <span className='btn-sm' onClick={() => alert()}>Copy</span></p>
                 </div>
                 </div>
             </div>
 
-            <div className={'header--wrapper'}>
-                <p className={'header--wrapper--text'}>LeaderBoard</p>
+            <div className='header--wrapper'>
+                <p className='header--wrapper--text'>LeaderBoard</p>
             </div>
-            <div className={'leader--position'}>
-                <div className={'leader--position--child'}>
-                    <table className={'table'} >
+            <div className='leader--position'>
+                <div className='leader--position--child'>
+                    <table className='table' >
                         <tr>
                             <th>Rank</th>
                             <th>Name in full</th>
