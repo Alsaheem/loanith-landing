@@ -9,11 +9,11 @@ const Home = () => {
           <div className="row pt-5">
             <div className="col-5 text-w">
               <h1 className="text-w">
-                There is a better way to get funds for family and business needs
+              No matter your circle, Loanith got you covered.
               </h1>
               <br />
               <p className="lead">
-                Download the mobile from your favourite App Store to get started
+              Download our App from your favourite App Store to access our credit Facilities on Demand.
               </p>
               <br />
 
@@ -43,11 +43,9 @@ const Home = () => {
               width={64}
               height={64}
             />
+            <h4>Cash Advance</h4>
             <p className="pt-4">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Temporibus architecto saepe tempora quos dignissimos, itaque
-              quaerat enim facilis fugiat maiores doloribus quidem perferendis
-              dolorum delectus iure natus laudantium! A, quis?
+            Transfer funds to your bank account for your personal use online and offline.
             </p>
           </div>
           <div className="col-4 text-center">
@@ -57,11 +55,9 @@ const Home = () => {
               width={64}
               height={64}
             />
+            <h4>Balance Transfer</h4>
             <p className="pt-4">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Temporibus architecto saepe tempora quos dignissimos, itaque
-              quaerat enim facilis fugiat maiores doloribus quidem perferendis
-              dolorum delectus iure natus laudantium! A, quis?
+            Owing someone? It shouldn't be embarrassing. Pay them off now using credit from Loanith.
             </p>
           </div>
           <div className="col-4 text-center">
@@ -71,6 +67,7 @@ const Home = () => {
               width={64}
               height={64}
             />
+            <h4>Pay Bills</h4>
             <p className="pt-4">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Temporibus architecto saepe tempora quos dignissimos, itaque
@@ -125,19 +122,14 @@ const Home = () => {
             </div>
             <div className="col-1"></div>
             <div className="col-5 center">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Repellendus unde in eius tempora expedita ea deleniti cumque
-              voluptatibus distinctio ipsam! Repellendus iste quo quidem
-              incidunt in quam exercitationem quis libero.
+            Download Loanith or Loanith Lender App from your favourite app store
+
             </div>
           </div>
 
           <div className="row mb-5">
             <div className="col-5 center">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi,
-              tenetur ut. Eos fuga velit illo mollitia dolores, ex enim
-              exercitationem facilis consectetur. Harum repellat iste excepturi.
-              Facilis assumenda ipsa sunt?
+            Sign up and complete your borrower and/or lending Profile using the App
             </div>
             <div className="col-1"></div>
 
@@ -152,10 +144,8 @@ const Home = () => {
             <div className="col-1"></div>
 
             <div className="col-5 center">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam sit
-              laudantium fugiat eaque illum corporis ipsam cumque quisquam omnis
-              esse, nemo reprehenderit voluptatem quibusdam architecto
-              exercitationem facilis. Sit, officia exercitationem!
+            Get funds on demand or subscribe to an investment offer.
+
             </div>
           </div>
         </div>
