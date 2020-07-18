@@ -1,0 +1,6 @@
+.banner-img{
+    height: 200px;
+    background-image: url(../../../assets/contact.png);
+    background-position: center;
+    background-size: cover;
+}
