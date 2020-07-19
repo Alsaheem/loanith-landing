@@ -10,6 +10,7 @@ import Layout from '../common/Layout/Layout';
 import Privacy from '../pages/privacy/Privacy';
 import Terms from '../pages/terms/Terms';
 import Blogs from '../pages/blogs/index';
+import NotFound from '../NotFound/NotFound';
 
 const ApplicationRoutes = () => {
     return(  
@@ -17,14 +18,15 @@ const ApplicationRoutes = () => {
       <Layout>
       <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/why-loanith" component={WhyLoanith} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/support" component={Support} />
-          <Route path="/waitlist" component={Waitlist} />
-          <Route path="/leaderboard" component={LeaderBoard} />
-          <Route path="/privacy" component={Privacy} />
-          <Route path="/terms" component={Terms} />
-          <Route path="/blog" component={Blogs} />
+          <Route path="/why-loanith" exact component={WhyLoanith} />
+          <Route path="/contact" exact component={Contact} />
+          <Route path="/support" exact component={Support} />
+          <Route path="/waitlist" exact component={Waitlist} />
+          <Route path="/leaderboard" exact component={LeaderBoard} />
+          <Route path="/privacy" exact component={Privacy} />
+          <Route path="/terms" exact component={Terms} />
+          <Route path="/blog" exact component={Blogs} />
+          <Route component={NotFound} />
         </Switch>
       </Layout>
 
