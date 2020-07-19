@@ -69,7 +69,12 @@ color: #000000;
     cursor: pointer;
 }
 
-
+.wait-list-image{
+    height: 200px;
+    background-image: url(../../../assets/wait.png);
+    background-position: center;
+    background-size: cover;
+}
 
 @media screen and (max-width: 600px) {
     .card-style{

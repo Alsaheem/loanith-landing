@@ -44,12 +44,23 @@ const Waitlist = () => {
                 </Row >
                 <div className='second-div'>
                     <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} >
-                        <Col className="gutter-row" span={6}>HOW IT WORKS</Col>
+                        <Col className="gutter-row" span={6}>
+                            <h4> HOW IT WORKS</h4>
+                            <div className='wait-list-image'>
+
+                            </div>
+                            </Col>
                         <Col className="gutter-row" span={18}>
+                            <div style={{display: 'flex', justifyContent:'centre', alignItems:'centre', padding: '30px'}}> 
+                            <div style={{padding: '20px'}}>
                             Leading the board could be so easy.<br />
 Join waitlist by completing the form below to earn your first 100 points. 1 point = 1 hkHiur <br />
 Invite your friend via email and social media handles. You earn 50 points when each friend joins the waitlist using your referral link.<br />
 Encourage your friends to invite others to join the waitlist. You earn 10 points when friends of your friend joints the waitlist.<br />
+
+                            </div>
+                           
+                            </div>
 
                         </Col>
                     </Row>
