@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Layout, Input, Button, Collapse, Typography,  Select, Row, Col, Card} from 'antd';
+import {  Input, Button, Collapse, Row, Col, Card} from 'antd';
 import './Waitlist.css';
 
 interface Props {
@@ -9,9 +9,6 @@ interface State {
 
 }
 
-const { Option } = Select;
-const { Content } = Layout;
-const { Text } = Typography;
 const { TextArea } = Input;
 const { Panel } = Collapse;
 

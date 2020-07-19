@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Input, Button } from 'antd';
+import { Input } from 'antd';
 import './LeaderBoard.Module.css';
 
 interface Props {

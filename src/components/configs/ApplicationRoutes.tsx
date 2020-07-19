@@ -9,6 +9,7 @@ import LeaderBoard from '../pages/leaderboard/LeaderBoard';
 import Layout from '../common/Layout/Layout';
 import Privacy from '../pages/privacy/Privacy';
 import Terms from '../pages/terms/Terms';
+import Blogs from '../pages/blogs/index';
 
 const ApplicationRoutes = () => {
     return(  
@@ -23,6 +24,7 @@ const ApplicationRoutes = () => {
           <Route path="/leaderboard" component={LeaderBoard} />
           <Route path="/privacy" component={Privacy} />
           <Route path="/terms" component={Terms} />
+          <Route path="/blog" component={Blogs} />
         </Switch>
       </Layout>
 
