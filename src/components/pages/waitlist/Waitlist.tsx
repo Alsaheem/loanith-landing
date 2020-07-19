@@ -19,7 +19,9 @@ const { Option } = Select;
 const Waitlist = () => {
     return (
         <div className='wrapper'>
-
+<div className="banner-support">
+                {/* <img src="./assets/contact.png" height={200} width={'100%'}loading="lazy"/> */}
+            </div>
 
 
             <div className='why-waitlist'>
