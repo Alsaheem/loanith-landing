@@ -35,8 +35,8 @@ const Contact = () => {
         For Complaint: support@loanith.com <br />
         For Feedback and Other Enquiries: info@loanith.com
                                 </p>
-                        <p> Facebook: https://www.facebook.com/myloanith<br />
-        Instagram: https://www.instagram.com/myloanith</p>
+                        {/* <p> Facebook: https://www.facebook.com/myloanith<br />
+        Instagram: https://www.instagram.com/myloanith</p> */}
 
                     </div>
                 </Col>
