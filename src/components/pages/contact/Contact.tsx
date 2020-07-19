@@ -1,12 +1,10 @@
 import * as React from 'react';
 import {
-    Layout, Input, Button, List, Rate, Card, Avatar, Typography, Spin, Select, Row, Col
+    Layout, Input, Button,  Card,  Row, Col
 } from 'antd';
 import './Contact.css';
 
-const { Option } = Select;
-const { Content } = Layout;
-const { Text } = Typography;
+
 const { TextArea } = Input;
 
 const Contact = () => {
