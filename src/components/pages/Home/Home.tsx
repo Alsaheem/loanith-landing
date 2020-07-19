@@ -149,6 +149,7 @@ const Home = () => {
         </div>
       </div>
       <div className="bg-white mt-5 how_it_works">
+      <ol>
         <div className="container">
           <h5 className="text-center mb-4 font-weight-bold">How It Works</h5>
           <div className="row mb-5">
@@ -156,16 +157,18 @@ const Home = () => {
               <img className="img-fluid" src="./assets/mobile_app.svg" alt="" />
             </div>
             <div className="col-1 hidden"></div>
-            <div className="col-5 center">
-              Download Loanith or Loanith Lender App from your favourite app
-              store
+            <div className="col-5 center lead">
+              <li className='list'>Download Loanith or Loanith Lender App from your favourite app
+              store</li>
+              
             </div>
           </div>
 
           <div className="row mb-5">
-            <div className="col-5 center">
-              Sign up and complete your borrower and/or lending Profile using
-              the App
+            <div className="col-5 center lead">
+            <li className='list'>Sign up and complete your borrower and/or lending Profile using
+              the App</li>
+              
             </div>
             <div className="col-1 hidden"></div>
 
@@ -179,11 +182,15 @@ const Home = () => {
             </div>
             <div className="col-1 hidden"></div>
 
-            <div className="col-5 center">
-              Get funds on demand or subscribe to an investment offer.
+            <div className="col-5 center lead">
+              
+                <li className='list' >Get funds on demand or subscribe to an investment offer.</li>
+              
+              
             </div>
           </div>
         </div>
+        </ol>
       </div>
       <br />
       <div className="blog mt-4">

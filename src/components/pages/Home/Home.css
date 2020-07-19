@@ -25,6 +25,11 @@
       width: 30%;
   }
 
+  .list{
+      list-style: decimal;
+      font-weight: 600;
+  }
+
   @media only screen and (max-width: 768px) {
     /* For mobile phones: */
     .main_img{
