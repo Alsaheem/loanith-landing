@@ -1,3 +1,6 @@
+.blog-wrapper{
+    min-height: 90vh;
+}
 .blog{
     margin: 10px auto;
     width: 80%;
@@ -9,4 +12,8 @@
     background-image: url(../../../assets/contact.png);
     background-position: center;
     background-size: cover;
+}
+.featured-image:hover{
+    opacity: 0.5;
+    transform: scale(1.1);
 }
