@@ -14,17 +14,19 @@ const Footer = () => {
         <div className="col-md-3 col-sm-6">
           <ul>
             <li>Careers</li>
+            <li><Link to='/waitlist'>Waitlist</Link></li>
             <li>About Us</li>
             <li>Developers</li>
             <li><Link to='/privacy'>Privacy Policy</Link></li>
             <li><Link to='/terms'>Terms & Conditions</Link></li>
+            
           </ul>
         </div>
         <div className="col-md-3 col-sm-6">
           <ul>
             <li className='text_loanith font-weight-bold'>Download The App</li>
-            <li className='text-w text-light'><Link to='/wishlist'> <a> Google Playstore</a> </Link></li>
-            <li className='text-w'><Link to='/wishlist'>Apple App Store</Link></li>
+            <li className='text-w text-light'><Link to='/waitlist'> <a> Google Playstore</a> </Link></li>
+            <li className='text-w'><Link to='/waitlist'>Apple App Store</Link></li>
           </ul>
         </div>
         <div className="col-md-3 col-sm-6">

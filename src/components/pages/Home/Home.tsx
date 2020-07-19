@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Home.css";
+import { Modal } from "antd";
+import { Link } from "react-router-dom";
 
 const Home = () => {
+  const [visible, setVisible] = useState(false);
+
+  const showModal = () => {
+    setVisible(true);
+  };
+
+  const handleCancel = () => {
+    setVisible(false)
+  };
+
+
   return (
     <div className="">
       <div className=" hero_section bg_loanith">
@@ -9,20 +22,29 @@ const Home = () => {
           <div className="row pt-5">
             <div className="col-md-5 text-w">
               <h1 className="text-w">
-              No matter your circle, Loanith got you covered.
+                No matter your circle, Loanith got you covered.
               </h1>
               <br />
               <p className="lead">
-              Download our App from your favourite App Store to access our credit Facilities on Demand.
+                Download our App from your favourite App Store to access our
+                credit Facilities on Demand.
               </p>
               <br />
 
               <div className="d-flex justify-content-between">
-                <div className="">
-                  <img className="btn_action" src="./assets/googleBadge.png" loading="lazy" />
+                <div className="" onClick={showModal}>
+                  <img
+                    className="btn_action"
+                    src="./assets/googleBadge.png"
+                    loading="lazy"
+                  />
                 </div>
-                <div className="">
-                  <img className="btn_action" src="./assets/appBadge.png" loading="lazy" />
+                <div className="" onClick={showModal}>
+                  <img
+                    className="btn_action"
+                    src="./assets/appBadge.png"
+                    loading="lazy"
+                  />
                 </div>
               </div>
             </div>
@@ -33,21 +55,22 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <div className="">
+        <Modal
+          title="Welcome"
+          visible={visible}
+          footer={null}
+          onCancel={handleCancel}
+        >
+          <p>Our Application is still Under Development</p>
+          <p>Join our waitlist in order to get exclusive access when we go live</p>
+          <p>Click below to join the waitlist</p>
+          <Link to='/waitlist'><button className="btn bg_loanith">Join waitlist</button></Link>
+        </Modal>
+      </div>
       <div className="our-solution container mt-5">
         <h2 className="text-center mb-4">OUR SOLUTION FOR YOUR NEEDS</h2>
         <div className="row">
-          <div className="col-md-4 text-center">
-            <img
-              src="./assets/money-bag.png"
-              loading="lazy"
-              width={64}
-              height={64}
-            />
-            <h4>Cash Advance</h4>
-            <p className="pt-4">
-            Transfer funds to your bank account for your personal use online and offline.
-            </p>
-          </div>
           <div className="col-md-4 text-center">
             <img
               src="./assets/bank-building.png"
@@ -55,9 +78,23 @@ const Home = () => {
               width={64}
               height={64}
             />
+            <h4>Cash Advance</h4>
+            <p className="pt-4">
+              Transfer funds to your bank account for your personal use online
+              and offline.
+            </p>
+          </div>
+          <div className="col-md-4 text-center">
+            <img
+              src="./assets/money-bag.png"
+              loading="lazy"
+              width={64}
+              height={64}
+            />
             <h4>Balance Transfer</h4>
             <p className="pt-4">
-            Owing someone? It shouldn't be embarrassing. Pay them off now using credit from Loanith.
+              Owing someone? It shouldn't be embarrassing. Pay them off now
+              using credit from Loanith.
             </p>
           </div>
           <div className="col-md-4 text-center">
@@ -69,7 +106,8 @@ const Home = () => {
             />
             <h4>Pay Bills</h4>
             <p className="pt-4">
-            Finished your Airtime, Data, Electricity, and Cable TV subscription, Loanith ensures you stay connected.
+              Finished your Airtime, Data, Electricity, and Cable TV
+              subscription, Loanith ensures you stay connected.
             </p>
           </div>
         </div>
@@ -115,23 +153,24 @@ const Home = () => {
           <h5 className="text-center mb-4 font-weight-bold">How It Works</h5>
           <div className="row mb-5">
             <div className="col-6">
-              <img className="img-fluid" src="./assets/press_play.png" alt="" />
+              <img className="img-fluid" src="./assets/mobile_app.svg" alt="" />
             </div>
             <div className="col-1 hidden"></div>
             <div className="col-5 center">
-            Download Loanith or Loanith Lender App from your favourite app store
-
+              Download Loanith or Loanith Lender App from your favourite app
+              store
             </div>
           </div>
 
           <div className="row mb-5">
             <div className="col-5 center">
-            Sign up and complete your borrower and/or lending Profile using the App
+              Sign up and complete your borrower and/or lending Profile using
+              the App
             </div>
             <div className="col-1 hidden"></div>
 
             <div className="col-6">
-              <img className="img-fluid" src="./assets/things_say.png" alt="" />
+              <img className="img-fluid" src="./assets/profile_details.svg" alt="" />
             </div>
           </div>
           <div className="row mb-5">
@@ -141,8 +180,7 @@ const Home = () => {
             <div className="col-1 hidden"></div>
 
             <div className="col-5 center">
-            Get funds on demand or subscribe to an investment offer.
-
+              Get funds on demand or subscribe to an investment offer.
             </div>
           </div>
         </div>
@@ -152,10 +190,13 @@ const Home = () => {
         <div className="container">
           <div className="d-flex justify-content-center mb-2">
             <hr className="liner"></hr>
-            <div className="font-weight-bold"> <h5 className='text-center'>Knowledge Center</h5></div>
+            <div className="font-weight-bold">
+              {" "}
+              <h5 className="text-center">Knowledge Center</h5>
+            </div>
             <hr className="liner"></hr>
           </div>
-          <br className='breaker'></br>
+          <br className="breaker"></br>
           <div className="card-deck">
             <div className="card">
               <img
