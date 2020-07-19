@@ -37,4 +37,14 @@
     body{
         overflow-x: hidden;
     }
+    .hidden{
+        display: none;
+    }
+    .center {
+        padding: 20px 0;
+        text-align: center;
+      }
+      .breaker{
+          display: none;
+      }
   }

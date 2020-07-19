@@ -117,7 +117,7 @@ const Home = () => {
             <div className="col-6">
               <img className="img-fluid" src="./assets/press_play.png" alt="" />
             </div>
-            <div className="col-1"></div>
+            <div className="col-1 hidden"></div>
             <div className="col-5 center">
             Download Loanith or Loanith Lender App from your favourite app store
 
@@ -128,7 +128,7 @@ const Home = () => {
             <div className="col-5 center">
             Sign up and complete your borrower and/or lending Profile using the App
             </div>
-            <div className="col-1"></div>
+            <div className="col-1 hidden"></div>
 
             <div className="col-6">
               <img className="img-fluid" src="./assets/things_say.png" alt="" />
@@ -138,7 +138,7 @@ const Home = () => {
             <div className="col-6">
               <img className="img-fluid" src="./assets/wallet.png" alt="" />
             </div>
-            <div className="col-1"></div>
+            <div className="col-1 hidden"></div>
 
             <div className="col-5 center">
             Get funds on demand or subscribe to an investment offer.
@@ -148,14 +148,14 @@ const Home = () => {
         </div>
       </div>
       <br />
-      <div className="blog mt-5">
+      <div className="blog mt-4">
         <div className="container">
           <div className="d-flex justify-content-center mb-2">
             <hr className="liner"></hr>
             <div className="font-weight-bold"> <h5 className='text-center'>Knowledge Center</h5></div>
             <hr className="liner"></hr>
           </div>
-          <br/>
+          <br className='breaker'></br>
           <div className="card-deck">
             <div className="card">
               <img
