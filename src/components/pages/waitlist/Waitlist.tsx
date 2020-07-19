@@ -45,9 +45,12 @@ const Waitlist = () => {
 
                 </Row >
                 <div className='second-div'>
+                    <div>
+                    <h4 style={{textAlign: 'center'}}> HOW IT WORKS</h4>
+                    </div>
                     <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} >
                         <Col className="gutter-row" span={6}>
-                            <h4> HOW IT WORKS</h4>
+                            
                             <div className='wait-list-image'>
 
                             </div>
