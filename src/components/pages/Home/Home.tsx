@@ -131,7 +131,7 @@ const Home = () => {
               <div className="col-md-4">
                 <div className="input-group mb-2">
                   <input
-                    type="text"
+                    type="email"
                     className="form-control"
                     id="inlineFormInputGroup"
                     placeholder="Enter A Valid Email Address"
