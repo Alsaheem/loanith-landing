@@ -471,7 +471,7 @@ const Support = () => {
                   </Collapse>
                 </Panel>
 
-                <Panel header="This is panel header 5" key="5">
+                <Panel header="UNDERSTANDING CREDIT REPORTING" key="5">
                   <Collapse accordion>
                     <Panel
                       header="THow is Loanith Different from a Credit and Debit Card?"
