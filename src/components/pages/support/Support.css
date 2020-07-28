@@ -4,3 +4,7 @@
     background-position: center;
     background-size: cover;
 }
+.support--position--child-content{
+    text-align: left;
+    min-width: '80%';
+}

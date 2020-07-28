@@ -1,5 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'antd';
+import '../blogs.css';
 
 const Blog = (props: any) => {
     return (
@@ -14,7 +15,10 @@ const Blog = (props: any) => {
                     <Col className="gutter-row" span={16}>
                         <h4>{props.title}</h4>
                         <p>{props.exerpts}</p>
-                        <a href={props.link} target="_blank">read more</a>
+                        <div className="link">
+                        <a href={props.link} id="link">read more</a>
+                        </div>
+                        
                     </Col>
                 </Row>
             </div>
