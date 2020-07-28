@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, Button, Collapse, Row, Col, Card, Select } from 'antd';
+import { Input, Button, Collapse, Row, Col, Card, Select, Divider } from 'antd';
 import './Waitlist.css';
 
 interface Props {
@@ -44,10 +44,18 @@ const Waitlist = () => {
                     </Col>
 
                 </Row >
+                <div className='divider-wrapper'>
+                <Divider className='divider' style={{backgroundColor: 'orange'}}>
+                <h4 style={{textAlign: 'center'}}> HOW IT WORKS</h4>
+                    
+                    </Divider>
+                    
+                    </div>
                 <div className='second-div'>
+
                     <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} >
                         <Col className="gutter-row" span={6}>
-                            <h4> HOW IT WORKS</h4>
+                            
                             <div className='wait-list-image'>
 
                             </div>
