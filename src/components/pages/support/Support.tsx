@@ -470,6 +470,64 @@ const Support = () => {
                     </Panel>
                   </Collapse>
                 </Panel>
+                <Panel
+                  header="LOST OR STOLEN DEVICE"
+                  key="4a"
+                >
+                  <Collapse accordion>
+                    <Panel
+                      header="How can I report a lost or stolen credit device?"
+                      key="1"
+                    >
+                      <p>
+                      As soon as you noticed your smartphone is missing, please visit
+https://www.loanith.com/lock to prevent unauthorized transactions on your
+account.
+                      </p>
+                    </Panel>
+                    <Panel
+                      header="If my device is lost or stolen, how can I make sure that I don’t get stuck with
+                      fraudulent transactions on my bill?"
+                      key="2"
+                    >
+                      <p>
+                      Your account comes with $0 Fraud Liability if your phone is ever lost or stolen
+and your Loanith Account used without your authorization. We however require
+you use the Lock Account Feature immediately your device goes missing as only
+transactions occurring from the time of reporting benefit from zero Fraud Liability.
+                      </p>
+                      
+                    </Panel>
+                    <Panel
+                      header="How can I access my account after finding my lost or stolen device?"
+                      key="3"
+                    >
+                      <p>
+                      Open the Loanith App and Use the Unlock Account Feature to start using your
+account when your device is found
+                      </p>
+                    </Panel>
+                    <Panel
+                      header="How can I access my account after buying a new device?"
+                      key="3"
+                    >
+                      <p>
+
+                      Download the Loanith App from your device store, open the App and Use the
+Unlock Account Feature to start using your account on your new device.
+                      </p>
+                    </Panel>
+                  </Collapse>
+                </Panel>
+
+
+
+
+
+
+
+
+
 
                 <Panel header="UNDERSTANDING CREDIT REPORTING" key="5">
                   <Collapse accordion>
