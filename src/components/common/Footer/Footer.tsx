@@ -17,6 +17,7 @@ const Footer = () => {
             <li><Link to='/waitlist'>Waitlist</Link></li>
             <li>About Us</li>
             <li>Developers</li>
+            <li><Link to='/blog'>Knowledge Center</Link></li>
             <li><Link to='/privacy'>Privacy Policy</Link></li>
             <li><Link to='/terms'>Terms & Conditions</Link></li>
             
