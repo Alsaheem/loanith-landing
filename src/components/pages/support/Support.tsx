@@ -282,30 +282,104 @@ const Support = () => {
                     </Panel>
                   </Collapse>
                 </Panel>
-               
+
                 <Panel
                   header="ABOUT PRIME RATE AND ANNUAL PERCENTAGE RATES (APR)"
                   key="3"
                 >
                   <Collapse accordion>
-                    <Panel
-                      header="THow is Loanith Different from a Credit and Debit Card?"
-                      key="1"
-                    >
+                    <Panel header="What is the Prime Rate?" key="1">
                       <p>
-                        Loanith allows you to borrow money from loan investors,
-                        with the agreement you will pay a percentage of interest
-                        on any outstanding debt at the end of each billing
-                        cycle. However, with Loanith credit account, you do not
-                        need a card with maintenance fees to use this money. All
-                        you need is a smartphone, the Loanith App, and a
-                        complete profile.
-                        <br />A debit card pulls money directly from an
-                        associated bank account. Unlike Loanith Credit Account
-                        and Credit Cards, you generally cannot build a credit
-                        history using debit cards.
+                        The Prime Rate is a benchmark interest rate used by most
+                        financial institution to set rates on consumer loan
+                        products. The Prime Rate is based upon, and generally
+                        changes with, the Central Bank’s Monetary Policy Rate.
+                        If your credit account or any other loan has a variable
+                        APR based on the Prime Rate, whenever the Prime Rate
+                        changes, the variable APR on your account will likely
+                        change with it.
                       </p>
                     </Panel>
+                    <Panel
+                      header="What is the current APR for my account?"
+                      key="2"
+                    >
+                      <p>
+                        To find the current APR for your account, sign in to the
+                        Loanith App and check the “Home” and/or “Account”
+                        section.
+                      </p>
+                    </Panel>
+                    <Panel
+                      header="How do you calculate my variable APR?"
+                      key="3"
+                    >
+                      We calculate a variable APR by adding a margin to the
+                      Central Bank Money Policy Rate. The margin is dependent on
+                      your credit score, account type, and transaction type.
+                      Please check your account details for more information.
+                    </Panel>
+
+                    <Panel
+                      header="How will I know if my account is affected by a Prime Rate change?"
+                      key="6"
+                    >
+                      <p>
+                        If your account has a variable APR based on the Central
+                        Bank Money Policy Rate, please refer to your “account”
+                        for the date of when these changes take effect.
+                      </p>
+                    </Panel>
+                    <Panel header="Will my APR ever go back down?" key="5">
+                      <p>
+                        If the Central Bank lower the Money Policy Rate, both
+                        the Prime Rate and your credit account’s APR are likely
+                        to go down as well.
+                      </p>
+                    </Panel>
+                    <Panel
+                      header="How can I reduce the amount of interest that I pay?"
+                      key="7"
+                    >
+                      <p>
+                        Doing the following can help you minimize interest
+                        charges: If possible, pay your balance in full to avoid
+                        interest charges. Making on-time payments of more than
+                        your minimum payment each month will reduce the overall
+                        amount of interest you pay.
+                      </p>
+                    </Panel>
+                    <Panel
+                      header="How will a Prime Rate change affect my minimum payment?"
+                      key="8"
+                    >
+                      <p>
+                        Your minimum payment includes billed interest charges.
+                        So, if the Prime Rate changes, your variable APR
+                        changes, and by extension your interest charges and your
+                        minimum payment may also change with it.
+                      </p>
+                    </Panel>
+                    <Panel
+                      header="Why does my APR go up despite making timely payment?"
+                      key="9"
+                    >
+                      <p>
+                        There are few reasons your Annual Percentage Rate can go
+                        up even if you are up to date on all payments. These
+                        include a drop in your credit score, the end of a
+                        sweepstake or promotion, a change in the Money Policy
+                        Rate, or if you have made late payments.
+                      </p>
+                    </Panel>
+                    <Panel header="How do I lower my interest rates?" key="10">
+                      <p>
+                        Please feel free to contact us and ask for a lower
+                        interest rate. Depending on your current standing credit
+                        history, we may be able to approve a lower rate.
+                      </p>
+                    </Panel>
+
                     <Panel
                       header="What information does Loanith require when I apply for a Credit Account?"
                       key="2"
@@ -339,7 +413,7 @@ const Support = () => {
                     </Panel>
                   </Collapse>
                 </Panel>
-                
+
                 <Panel
                   header="ABOUT CASH BACK, LEADERBOARD AND REWARDS"
                   key="4"
