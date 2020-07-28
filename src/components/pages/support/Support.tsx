@@ -419,70 +419,60 @@ const Support = () => {
                   key="4"
                 >
                   <Collapse accordion>
-                    <Panel
-                      header="THow is Loanith Different from a Credit and Debit Card?"
-                      key="1"
-                    >
+                    <Panel header="What is Cash Back?" key="1">
                       <p>
-                        Loanith allows you to borrow money from loan investors,
-                        with the agreement you will pay a percentage of interest
-                        on any outstanding debt at the end of each billing
-                        cycle. However, with Loanith credit account, you do not
-                        need a card with maintenance fees to use this money. All
-                        you need is a smartphone, the Loanith App, and a
-                        complete profile.
-                        <br />A debit card pulls money directly from an
-                        associated bank account. Unlike Loanith Credit Account
-                        and Credit Cards, you generally cannot build a credit
-                        history using debit cards.
+                        With Cash Back, Loanith rewards you with a percentage of
+                        what you paid into your credit account. These cash back
+                        are accumulated and rewarded at the ended of each year.
+                        If you have earned cash back, you can use it towards
+                        your current statement, for cash advance, balance
+                        transfers or even by donation to non-profit
+                        organizations as well.
+                      </p>
+                    </Panel>
+                    <Panel header="What is Leaderboard?" key="2">
+                      <p>
+                        Leaderboard allows you earn Ithcoin through sign-up and
+                        referral rewards. You earn points when you join our
+                        waitlist, sign-up, invite and encourage your referrals
+                        to do same. If you have earned Ithcoins, you can use it
+                        towards increasing your grace period, or reducing your
+                        Annual Percentage Rate. Ithcoins are accumulated and
+                        rewarded at the end of each year.
+                      </p>
+                    </Panel>
+                    <Panel header="What is Statement Credit?" key="3">
+                      <p>
+                        A statement credit is a positive amount on your credit
+                        bill. If you accidentally overpay, Loanith will apply a
+                        statement credit toward your future transactions. Cash
+                        back can also be applied to your statement credit,
+                        lowering your balance by using your cash rewards.
                       </p>
                     </Panel>
                     <Panel
-                      header="What information does Loanith require when I apply for a Credit Account?"
-                      key="2"
-                    >
-                      <p>
-                        Applying for a Loanith Credit Account is a simple,
-                        straightforward process that requires some basic
-                        information. You will need a smartphone and the Loanith
-                        App to provide basic personal information and create a
-                        credit account such as:
-                      </p>
-                      <ul>
-                        <li>Phone Number</li>
-                        <li>Date of Birth</li>
-                        <li>Bank Verification Number (BVN)</li>
-                        <li>Full Name</li>
-                        <li>Physical address (No P.O. Boxes)</li>
-                        <li>Estimated gross annual income</li>
-                        <li>Checking and/or savings account information</li>
-                      </ul>
-                    </Panel>
-                    <Panel
-                      header="Must I have a good credit history to open a Loanith Credit Account?"
+                      header="When can I redeem my loanith reward?"
                       key="3"
                     >
                       <p>
-                        No! Loanith has a credit offer for everyone aged 18 and
-                        above. We want to help you build a credit history with a
-                        great credit score.
+                        Your rewards are unlocked at the end of each year and
+                        can be redeem for use within 12months or end of year,
+                        whichever comes first. All unlocked rewards expire at
+                        the end of the current year.
                       </p>
                     </Panel>
                   </Collapse>
                 </Panel>
-                <Panel
-                  header="LOST OR STOLEN DEVICE"
-                  key="4a"
-                >
+                <Panel header="LOST OR STOLEN DEVICE" key="4a">
                   <Collapse accordion>
                     <Panel
                       header="How can I report a lost or stolen credit device?"
                       key="1"
                     >
                       <p>
-                      As soon as you noticed your smartphone is missing, please visit
-https://www.loanith.com/lock to prevent unauthorized transactions on your
-account.
+                        As soon as you noticed your smartphone is missing,
+                        please visit https://www.loanith.com/lock to prevent
+                        unauthorized transactions on your account.
                       </p>
                     </Panel>
                     <Panel
@@ -491,20 +481,21 @@ account.
                       key="2"
                     >
                       <p>
-                      Your account comes with $0 Fraud Liability if your phone is ever lost or stolen
-and your Loanith Account used without your authorization. We however require
-you use the Lock Account Feature immediately your device goes missing as only
-transactions occurring from the time of reporting benefit from zero Fraud Liability.
+                        Your account comes with $0 Fraud Liability if your phone
+                        is ever lost or stolen and your Loanith Account used
+                        without your authorization. We however require you use
+                        the Lock Account Feature immediately your device goes
+                        missing as only transactions occurring from the time of
+                        reporting benefit from zero Fraud Liability.
                       </p>
-                      
                     </Panel>
                     <Panel
                       header="How can I access my account after finding my lost or stolen device?"
                       key="3"
                     >
                       <p>
-                      Open the Loanith App and Use the Unlock Account Feature to start using your
-account when your device is found
+                        Open the Loanith App and Use the Unlock Account Feature
+                        to start using your account when your device is found
                       </p>
                     </Panel>
                     <Panel
@@ -512,22 +503,13 @@ account when your device is found
                       key="3"
                     >
                       <p>
-
-                      Download the Loanith App from your device store, open the App and Use the
-Unlock Account Feature to start using your account on your new device.
+                        Download the Loanith App from your device store, open
+                        the App and Use the Unlock Account Feature to start
+                        using your account on your new device.
                       </p>
                     </Panel>
                   </Collapse>
                 </Panel>
-
-
-
-
-
-
-
-
-
 
                 <Panel header="UNDERSTANDING CREDIT REPORTING" key="5">
                   <Collapse accordion>
