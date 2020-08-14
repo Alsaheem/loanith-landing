@@ -75,7 +75,12 @@ color: #000000;
     background-position: center;
     background-size: cover;
 }
-
+.divider-wrapper{
+    padding: 40px 0px;
+}
+.divider{
+  color: orange;
+}
 @media screen and (max-width: 600px) {
     .card-style{
         background: #FBF9F7;
