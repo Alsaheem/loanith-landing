@@ -43,7 +43,7 @@ const Contact = () => {
                 <Col span={12}>
                     <div className='leftSide'>
                         <Card style={{ width: 400 }} className='card-style'>
-                            <Input placeholder="Name in full" allowClear />
+                            <Input placeholder="Name in full" allowClear style={{background:'red'}} />
                             <br />
                             <br />
                             <Input placeholder="Enter email " allowClear />

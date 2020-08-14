@@ -46,7 +46,9 @@ const LeaderBoard = () => {
 	const [ isLoading, setIsLoading ] = useState<boolean>(false);
 	const [ searchError, setSearchError ] = useState<string>('');
     const [allLeaders, setAllLeaders] = useState<any>([]);
-    useEffect(() => { });
+	// useEffect(() => { 
+	// 	checkPosition()
+	// },[]);
     
 
     const { loading, data } = useQuery(FETCH_ALL_LEADERS)
@@ -152,31 +154,32 @@ const LeaderBoard = () => {
 							<th>Rank</th>
 							<th>Name in full</th>
 							<th>Scores</th>
-                        </tr>
-                        
-                        <tr>
-                            {
-                                data.map((item:any, index: number) => {
-                                    return(
-                                        <td>{item.fullname}</td>
-                                    )
-                                })
-                            }
-							<td>1</td>
-							<td>Smith Adams</td>
-							<td>95</td>
 						</tr>
-						<tr>
-							<td>2</td>
-							<td>Micheal Jackson</td>
-							<td>94</td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td>John Doe</td>
-							<td>80</td>
-						</tr>
+
+						
+							{
+								loading ? (
+									<h1>Loading........</h1>
+								) : (
+										data.getAllLeaders && data.getAllLeaders.map((item: any, index: any) => (
+											<tr>
+												<td>{index}</td>
+											<td>{item.fullname}</td>
+												<td>{item.point}</td>	
+											</tr>
+										))
+											
+										
+						)
+							}
+
+							
+						
+
+
 					</table>
+
+					
 				</div>
 			</div>
 		</div>
@@ -197,7 +200,7 @@ const FETCH_ALL_LEADERS = gql`
    { getAllLeaders{
     id
     email
-    fullName
+    fullname
     point
   }}
     

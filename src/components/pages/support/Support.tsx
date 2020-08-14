@@ -578,14 +578,14 @@ const Support = () => {
         <div className="leader--position--child">
           <div className="leader--position--child-content">
             <div>
-              <div>
-                <Input placeholder="Name in full" allowClear />
+              <div className='input--form'>
+                <Input placeholder="Name in full" allowClear/>
                 <br />
                 <br />
-                <Input placeholder="Enter email " allowClear />
+                <Input placeholder="Enter email " />
                 <br />
                 <br />
-                <TextArea placeholder="textarea with clear icon" allowClear />
+                <TextArea defaultValue={"textarea with clear icon"} allowClear />
                 <br />
                 <br />
                 <Button type="primary" className="color-primary">
