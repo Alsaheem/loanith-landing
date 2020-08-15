@@ -1,5 +1,6 @@
 import React, { useState, useEffect, ChangeEvent, MouseEvent } from 'react';
 import { Input, Button, Collapse, Row, Col, Card, Select, Divider } from 'antd';
+import { LoadingOutlined } from '@ant-design/icons';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 
@@ -17,10 +18,22 @@ const Waitlist = () => {
 	const [ emailChange, setEmailChange ] = useState<string>('');
 	const [ salaryRange, setSalaryRange ] = useState<string>('');
 	const [ employedStatus, setEmployedStatus ] = useState<string>('');
-	const [userState, setUserState] = useState<string>('');
-	const [isLoading, setIsLoading] = useState<boolean>(false);
-	const [sentStatus, setSentStatus] = useState<string>('');
-	const [sentError, setSentError] = useState<string>('');
+	const [ userState, setUserState ] = useState<string>('');
+	const [ isLoading, setIsLoading ] = useState<boolean>(false);
+	const [ sentStatus, setSentStatus ] = useState<string>('');
+	const [ sentError, setSentError ] = useState<string>('');
+
+	useEffect(
+		() => {
+			if (sentStatus || sentError) {
+				setTimeout(() => {
+					setSentStatus('');
+					setSentError('');
+				}, 5000);
+			}
+		},
+		[ sentStatus, setSentError ]
+	);
 
 	const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
 		let query = event.target.value;
@@ -32,20 +45,11 @@ const Waitlist = () => {
 	};
 
 	const handleSubmit = (event: MouseEvent<HTMLElement>) => {
-		let userObject = {
-			fullname: contactName,
-			emal: emailChange,
-			salary: salaryRange,
-			employed: employedStatus,
-			state: userState
-		};
-		joinWaitingList()
-		console.log('====', userObject);
+		joinWaitingList();
+		setIsLoading(true);
 	};
 
-
-	const [joinWaitingList] = useMutation(JOIN_WAIT_LIST, {
-		
+	const [ joinWaitingList ] = useMutation(JOIN_WAIT_LIST, {
 		variables: {
 			fullName: contactName,
 			email: emailChange,
@@ -54,8 +58,10 @@ const Waitlist = () => {
 			state: userState
 		},
 		update(_, result) {
-			console.log('Mess Res =======', result.data)
-			setSentStatus(result.data.messageSupport.message);
+			console.log('Mess Res =======', result.data.joinWaitingList.email);
+			if (result.data.joinWaitingList.email) {
+				setSentStatus('Thank you for joining the waiting list');
+			}
 			setIsLoading(false);
 			setEmailChange('');
 			setEmployedStatus('');
@@ -133,11 +139,14 @@ const Waitlist = () => {
 			</div>
 			<div className={'leader--position'}>
 				<div className={'card-style-wrapper'}>
+					{sentStatus.length > 0 ? <p className="success-status">{sentStatus}</p> : null}
+					{sentError.length > 0 ? <p className="error-status">{sentError}</p> : null}
 					<Card className="card-style">
 						<Input
 							placeholder="Name in full"
 							className="inputStyle"
 							name="fullName"
+							value={contactName}
 							onChange={handleNameChange}
 						/>
 						<br />
@@ -147,6 +156,7 @@ const Waitlist = () => {
 							className="inputStyle"
 							onChange={handleEmailChange}
 							name="email"
+							value={emailChange}
 						/>
 						<br />
 						<br />
@@ -189,6 +199,7 @@ const Waitlist = () => {
 						<br />
 						<Button type="primary" className="color-primary" onClick={handleSubmit}>
 							Send
+							{isLoading ? <LoadingOutlined /> : null}
 						</Button>
 					</Card>
 				</div>
