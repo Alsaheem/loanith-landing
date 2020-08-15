@@ -44,11 +44,25 @@ const LeaderBoard = () => {
 	const [ foundUser, setFoundUser ] = useState<any>(null);
 	const [ searchQuery, setSearchQuery ] = useState<string>('');
 	const [ isLoading, setIsLoading ] = useState<boolean>(false);
+	const [inviteLoading, setInviteLoading ] = useState<boolean>(false);
 	const [ searchError, setSearchError ] = useState<string>('');
+	const [ invitationErrorMsg, setInvitationErrorMsg ] = useState<string>('');
+	const [ invited, setinvited ] = useState<string>('');
+	const [resp, setResp ] = useState<string>('');
+	const [refCode, setRefCode ] = useState<string>('');
     const [allLeaders, setAllLeaders] = useState<any>([]);
-	// useEffect(() => { 
-	// 	checkPosition()
-	// },[]);
+	useEffect(() => { 
+		if (resp) {
+			setTimeout(() => {
+				setResp('')
+			}, 3000)
+		}
+		if (invitationErrorMsg) {
+			setTimeout(() => {
+				setInvitationErrorMsg('')
+			}, 3000)
+		}
+	}, [resp, invitationErrorMsg]);
     
 
     const { loading, data } = useQuery(FETCH_ALL_LEADERS)
@@ -64,11 +78,34 @@ const LeaderBoard = () => {
 		},
 		update(_, result) {
 			setFoundUser(result.data.checkPosition);
+
+			setRefCode(result.data.checkPosition.referralCode)
 			setIsLoading(false);
 			console.log('The rws: ', result.data.checkPosition);
 		},
 		onError(err) {
 			setSearchError('Email does not seem to exist, Please try again later');
+			setFoundUser('')
+			setIsLoading(false);
+		}
+	});
+
+	const [joinByRefferal] = useMutation(JOIN_BY_REFFERAL, {
+
+		variables: {
+			email: invited,
+			code:refCode
+		},
+
+		update(_, result) {
+			setResp(result.data.joinByReferral.message);
+			setInviteLoading(false)
+			setinvited('')
+			console.log('The >>>>>>>>>>>>>>>>>>: ', result.data.joinByReferral.message);
+		},
+		onError(err) {
+			setInvitationErrorMsg('Error occurr while sending invitation, Please try again later');
+			setFoundUser('')
 			setIsLoading(false);
 		}
 	});
@@ -83,7 +120,26 @@ const LeaderBoard = () => {
 		setSearchQuery(query);
 		console.log('==>', query);
 	};
+	const handleOnInvite = (event: ChangeEvent<HTMLInputElement>) => {
+		let query = event.target.value;
+		setinvited(query);
+		console.log('==>', query);
+	};
 
+
+	const sendInvite = () => {
+		const regEx = /^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/
+
+		if (invited.length <= 0) {
+			setInvitationErrorMsg("Receipent email can not be empty")
+		}else if (!invited.match(regEx)) {
+			setInvitationErrorMsg("Email must be valid")
+		} else {
+			setInviteLoading(true)
+		joinByRefferal()	
+		}
+		
+	}
 	return (
 		<div>
 			<div className="header--wrapper-leaders">
@@ -92,7 +148,7 @@ const LeaderBoard = () => {
 			<div className="leader--position">
 				<div className="leader--position--child">
 					<div className="leader--position--child-content">
-						<p>Enter your email address to check your position</p>
+						<p>Enter your email address to check your position and invite friends</p>
 						<p>
 							<Input
 								size="large"
@@ -119,30 +175,41 @@ const LeaderBoard = () => {
 					</div>
 				</div>
 			</div>
-			<div className="header--wrapper-leaders">
-				<p className="header--wrapper--text-leaders">Invite a Friend</p>
-			</div>
-			<div className="leader--position">
-				<div className="leader--position--child-two">
-					<div className="leader--position--child-content">
-						<p>
-							<Input
-								placeholder="email address of your friend"
-								style={{ width: '50%', height: '40px' }}
-							/>{' '}
-							<span className="btn-sm" onClick={() => alert()}>
-								Invite
-							</span>
-						</p>
-						<p>
-							<Input value="tinyurl/code" style={{ width: '50%', height: '40px' }} />{' '}
-							<span className="btn-sm" onClick={() => alert()}>
-								Copy
-							</span>
-						</p>
+			{
+				foundUser ? (
+					<>
+					<div className="header--wrapper-leaders">
+						<p className="header--wrapper--text-leaders">Invite a Friend</p>
 					</div>
-				</div>
-			</div>
+					<div className="leader--position">
+						<div className="leader--position--child-two">
+								<div className="leader--position--child-content">
+									{invitationErrorMsg.length > 0 ? <p className='invitation_err_msg'>{invitationErrorMsg}</p> : null}
+									{resp.length > 0 ? <p className='invitation_succ_msg'>{resp}</p> : null}
+								<p>
+									<Input
+										placeholder="email address of your friend"
+											style={{ width: '50%', height: '40px' }}
+											value={invited}
+											onChange={handleOnInvite}
+									/>{' '}
+									<span className="btn-sm" onClick={sendInvite}>
+											Invite
+													{inviteLoading ? <LoadingOutlined style={{ marginLeft: 20, marginBottom: 10 }} /> : null}
+							</span>
+								</p>
+								<p>
+										<Input value={refCode} disabled={true} contentEditable={false} style={{ width: '50%', height: '40px' }} />{' '}
+									<span className="btn-sm" onClick={() => alert()}>
+										Copy
+							</span>
+								</p>
+							</div>
+						</div>
+						</div>
+						</>
+				) :null
+			}
 
 			<div className="header--wrapper">
 				<p className="header--wrapper--text">LeaderBoard</p>
@@ -159,16 +226,20 @@ const LeaderBoard = () => {
 						
 							{
 								loading ? (
-									<h1>Loading........</h1>
-								) : (
-										data.getAllLeaders && data.getAllLeaders.map((item: any, index: any) => (
+									<p>Loading........</p>
+							) : (
+									data.getAllLeaders === 0 ? (
+										<p>No contacts</p>
+									) : data.getAllLeaders && data.getAllLeaders.map((item: any, index: any) => (
+										<tbody key={index}>
 											<tr>
-												<td>{index}</td>
-											<td>{item.fullname}</td>
-												<td>{item.point}</td>	
+											<td>{index + 1}</td>
+											<td>{item.fullName}</td>
+												<td>{item.point}</td>
 											</tr>
-										))
-											
+										</tbody>
+									))
+		
 										
 						)
 							}
@@ -189,10 +260,20 @@ const LeaderBoard = () => {
 const FETCH_USER = gql`
 	mutation checkPosition($email: String!) {
 		checkPosition(email: $email) {
-			full_name
+			fullName
 			email
 			position
+			referralCode
 		}
+	}
+`;
+
+const JOIN_BY_REFFERAL = gql`
+	mutation joinByReferral($email: String!, 
+	$code:String) {
+		joinByReferral(email:$email, code:$code){
+    message
+  }
 	}
 `;
 const FETCH_ALL_LEADERS = gql`
@@ -200,8 +281,9 @@ const FETCH_ALL_LEADERS = gql`
    { getAllLeaders{
     id
     email
-    fullname
+    fullName
     point
+	
   }}
     
 `;

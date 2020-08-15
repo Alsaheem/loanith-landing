@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect, ChangeEvent, MouseEvent } from 'react';
 import { Input, Button, Collapse, Row, Col, Card, Select, Divider } from 'antd';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
@@ -13,20 +13,60 @@ const { Panel } = Collapse;
 const { Option } = Select;
 
 const Waitlist = () => {
-	// useEffect(() => {
-	// 	console.log('Check position');
-	// 	checkPosition();
-	// }, []);
-	// const [ checkPosition ] = useMutation(FETCH_POSITION, {
-	// 	variables: {
-	// 		email: 'userone@gmail.com'
-	// 	},
-	// 	update(_, result) {
-	// 		let searchHis: any[] = [];
-	// 		console.log('The rws: ', result.data);
-	// 	}
-	// });
+	const [ contactName, setContactName ] = useState<string>('');
+	const [ emailChange, setEmailChange ] = useState<string>('');
+	const [ salaryRange, setSalaryRange ] = useState<string>('');
+	const [ employedStatus, setEmployedStatus ] = useState<string>('');
+	const [userState, setUserState] = useState<string>('');
+	const [isLoading, setIsLoading] = useState<boolean>(false);
+	const [sentStatus, setSentStatus] = useState<string>('');
+	const [sentError, setSentError] = useState<string>('');
 
+	const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
+		let query = event.target.value;
+		setContactName(query);
+	};
+	const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
+		let query = event.target.value;
+		setEmailChange(query);
+	};
+
+	const handleSubmit = (event: MouseEvent<HTMLElement>) => {
+		let userObject = {
+			fullname: contactName,
+			emal: emailChange,
+			salary: salaryRange,
+			employed: employedStatus,
+			state: userState
+		};
+		joinWaitingList()
+		console.log('====', userObject);
+	};
+
+
+	const [joinWaitingList] = useMutation(JOIN_WAIT_LIST, {
+		
+		variables: {
+			fullName: contactName,
+			email: emailChange,
+			salaryRange: salaryRange,
+			employmentStatus: employedStatus,
+			state: userState
+		},
+		update(_, result) {
+			console.log('Mess Res =======', result.data)
+			setSentStatus(result.data.messageSupport.message);
+			setIsLoading(false);
+			setEmailChange('');
+			setEmployedStatus('');
+			setContactName('');
+			setUserState('');
+		},
+		onError(err) {
+			setSentError('Email does not seem to exist, Please try again later');
+			setIsLoading(false);
+		}
+	});
 	return (
 		<div className="wrapper">
 			<div className="banner-support">
@@ -94,36 +134,50 @@ const Waitlist = () => {
 			<div className={'leader--position'}>
 				<div className={'card-style-wrapper'}>
 					<Card className="card-style">
-						<Input placeholder="Name in full" className="inputStyle" />
+						<Input
+							placeholder="Name in full"
+							className="inputStyle"
+							name="fullName"
+							onChange={handleNameChange}
+						/>
 						<br />
 						<br />
-						<Input placeholder="Enter email " className="inputStyle" />
+						<Input
+							placeholder="Enter email "
+							className="inputStyle"
+							onChange={handleEmailChange}
+							name="email"
+						/>
 						<br />
 						<br />
 						<Select
 							defaultValue="Employed"
 							style={{ width: '100%' }}
-							onSelect={(value) => console.log(value)}
+							onSelect={(value) => setEmployedStatus(value)}
 						>
-							<Option value="10">Self Employed</Option>
-							<Option value="20">Unemployed</Option>
-							<Option value="50">Full time staff</Option>
+							<Option value="employed">Self Employed</Option>
+							<Option value="unemployed">Unemployed</Option>
+							<Option value="full time">Full time staff</Option>
 						</Select>
 						<br />
 						<br />
-						<Select defaultValue="Lagos" style={{ width: '100%' }} onSelect={(value) => console.log(value)}>
-							<Option value="10">Lagos</Option>
-							<Option value="20">Ogun</Option>
-							<Option value="50">Oyo</Option>
-							<Option value="100">Ondo</Option>
-							<Option value="200">Osun</Option>
+						<Select
+							defaultValue="Lagos"
+							style={{ width: '100%' }}
+							onSelect={(value) => setUserState(value)}
+						>
+							<Option value="Lagos">Lagos</Option>
+							<Option value="Ogun">Ogun</Option>
+							<Option value="Oyo">Oyo</Option>
+							<Option value="Ondo">Ondo</Option>
+							<Option value="Osun">Osun</Option>
 						</Select>
 						<br />
 						<br />
 						<Select
 							defaultValue="50k -100k"
 							style={{ width: '100%' }}
-							onSelect={(value) => console.log(value)}
+							onSelect={(value) => setSalaryRange(value)}
 						>
 							<Option value="50k -100k">50k -100k</Option>
 							<Option value="100k - 200k">100k - 200k</Option>
@@ -133,7 +187,7 @@ const Waitlist = () => {
 						</Select>
 						<br />
 						<br />
-						<Button type="primary" className="color-primary">
+						<Button type="primary" className="color-primary" onClick={handleSubmit}>
 							Send
 						</Button>
 					</Card>
@@ -143,27 +197,30 @@ const Waitlist = () => {
 	);
 };
 
-const FETCH_POSITION = gql`
-
-mutation  checkPosition($email:String){
-
-    checkPosition(email:$email){
-        email
-        full_name
-        position
-    }
-   
-  }
-	# mutation fetchUserSearchHistory($userId: String!) {
-	# 	fetchUserSearchHistory(userId: $userId) {
-	# 		radius
-	# 		lat
-	# 		lon
-	# 		uid
-	# 		body
-	# 		searchKey
-	# 	}
-	# }
+const JOIN_WAIT_LIST = gql`
+	mutation joinWaitingList(
+		$fullName: String
+		$email: String
+		$state: String
+		$employmentStatus: String
+		$salaryRange: String
+	) {
+		joinWaitingList(
+			joinWaitingListInput: {
+				fullName: $fullName
+				email: $email
+				state: $state
+				employmentStatus: $employmentStatus
+				salaryRange: $salaryRange
+			}
+		) {
+			email
+			fullName
+			state
+			employmentStatus
+			salaryRange
+		}
+	}
 `;
 
 export default Waitlist;

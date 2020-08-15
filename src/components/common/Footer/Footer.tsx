@@ -1,22 +1,75 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState, useEffect, ChangeEvent, MouseEvent } from 'react';
 import './Footer.css';
 import { Link } from 'react-router-dom';
+import { useQuery, useMutation } from '@apollo/react-hooks';
+import { LoadingOutlined } from '@ant-design/icons';
+import gql from 'graphql-tag';
+import { truncate } from 'fs/promises';
 
 const Footer = () => {
-  const [contactName, setContactName] = useState<object>({});
+	const [ contactName, setContactName ] = useState<string>('');
 	const [ contactEmail, setContactEmail ] = useState<string>('');
 	const [ contactMessage, setContactMessage ] = useState<string>('');
+	const [ sentStatus, setSentStatus ] = useState<string>('');
+	const [ sentError, setSentError ] = useState<string>('');
+	const [ isLoading, setIsLoading ] = useState<boolean>(false);
+
+	useEffect(
+		() => {
+			setTimeout(() => {
+				setSentStatus('');
+			}, 5000);
+		},
+		[ sentStatus ]
+	);
 
 	const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    let query = event.target.value;
-    setContactName({ [event.target.name]: event.target.value })
-		console.log('changed', contactName);
+		let query = event.target.value;
+		setContactName(query);
+	};
+	const handleChange2 = (event: ChangeEvent<HTMLInputElement>) => {
+		let query = event.target.value;
+		setContactEmail(query);
 	};
 
 	const handleChangeText = (event: ChangeEvent<HTMLTextAreaElement>) => {
 		let query = event.target.value;
-		console.log('changed', query);
+		setContactMessage(query);
 	};
+
+	const handleSubmit = (event: MouseEvent<HTMLElement>) => {
+		event.preventDefault();
+		let details = {
+			fullName: contactName,
+			email: contactEmail,
+			message: contactMessage
+		};
+
+		setIsLoading(true);
+		messageSupport();
+
+		console.log('===========', details);
+	};
+
+	const [ messageSupport ] = useMutation(MESSAGE_SUPPORT, {
+		variables: {
+			email: contactEmail,
+			name: contactName,
+			message: contactMessage
+		},
+		update(_, result) {
+			console.log('Mess Res =======', result.data.messageSupport.message);
+			setSentStatus(result.data.messageSupport.message);
+			setIsLoading(false);
+			setContactMessage('');
+			setContactEmail('');
+			setContactName('');
+		},
+		onError(err) {
+			setSentError('Email does not seem to exist, Please try again later');
+			setIsLoading(false);
+		}
+	});
 	return (
 		<div className="bg_footer container-fluid p-2 mt-4">
 			<img src="./assets/loanith-logo.png" width={155} height={40} loading="lazy" />
@@ -76,6 +129,8 @@ const Footer = () => {
 					</ul>
 				</div>
 				<div className="col-md-3 col-sm-6">
+					{sentStatus.length > 0 ? <p className="successMsg">{sentStatus}</p> : null}
+					{sentError.length > 0 ? <p className="errorMsg">{sentError}</p> : null}
 					<form action="">
 						<ul>
 							<li className="text_loanith font-weight-bold">Support</li>
@@ -86,6 +141,7 @@ const Footer = () => {
 									onChange={handleChange}
 									name="fullname"
 									className="form-control"
+									value={contactName}
 								/>
 							</li>
 							<li>
@@ -93,8 +149,9 @@ const Footer = () => {
 									type="text"
 									placeholder="email"
 									name="email"
-									onChange={handleChange}
+									onChange={handleChange2}
 									className="form-control"
+									value={contactEmail}
 								/>
 							</li>
 							<li>
@@ -106,10 +163,16 @@ const Footer = () => {
 									id=""
 									cols={30}
 									rows={3}
+									value={contactMessage}
 								/>
 							</li>
 							<li>
-								<button className="bg_loanith btn mt-2">Submit</button>
+								<div>
+									{isLoading ? <LoadingOutlined /> : null}
+									<button className="bg_loanith btn mt-2" onClick={handleSubmit}>
+										Submit
+									</button>
+								</div>
 							</li>
 						</ul>
 					</form>
@@ -123,5 +186,13 @@ const Footer = () => {
 		</div>
 	);
 };
+
+const MESSAGE_SUPPORT = gql`
+	mutation messageSupport($name: String, $email: String, $message: String) {
+		messageSupport(supportInput: { name: $name, email: $email, message: $message }) {
+			message
+		}
+	}
+`;
 
 export default Footer;
