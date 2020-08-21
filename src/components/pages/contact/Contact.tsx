@@ -41,7 +41,7 @@ const Contact = () => {
                     </div>
                 </Col>
                 <Col span={12}>
-                    <div className='leftSide'>
+                    {/* <div className='leftSide'>
                         <Card style={{ width: 400 }} className='card-style'>
                             <Input placeholder="Name in full" allowClear style={{background:'red'}} />
                             <br />
@@ -56,7 +56,7 @@ const Contact = () => {
                                 Send
                                     </Button>
                         </Card>
-                    </div>
+                    </div> */}
                 </Col>
             </Row>
         </div>

@@ -87,3 +87,12 @@ td {
 th {
     text-align: left;
 }
+
+.invitation_err_msg{
+    color: red;
+    
+}
+.invitation_succ_msg {
+    color: green;
+    
+}

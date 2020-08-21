@@ -7,8 +7,8 @@ import { ApolloProvider } from '@apollo/react-hooks'
 
 
 const httpLink = createHttpLink({
-    uri: 'http://localhost:4000/'
-    // uri: 'https://loanitserver.herokuapp.com/'
+    // uri: 'http://localhost:4000/'
+    uri: 'https://loanitserver.herokuapp.com/'
 })
 
 const client = new ApolloClient({

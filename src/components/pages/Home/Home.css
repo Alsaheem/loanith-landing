@@ -53,3 +53,9 @@
           display: none;
       }
   }
+  .error{
+      color: white;
+  }
+  .success{
+      color: white;
+  }
