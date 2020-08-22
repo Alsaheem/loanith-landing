@@ -1,4 +1,4 @@
-import React, { useEffect, useState, ChangeEvent } from 'react';
+import React, { useEffect, useState, ChangeEvent, MouseEvent } from 'react';
 import { Input } from 'antd';
 import { LoadingOutlined } from '@ant-design/icons';
 
@@ -44,14 +44,22 @@ const LeaderBoard = () => {
 	const [ foundUser, setFoundUser ] = useState<any>(null);
 	const [ searchQuery, setSearchQuery ] = useState<string>('');
 	const [ isLoading, setIsLoading ] = useState<boolean>(false);
+	const [copySuccess, setCopySuccess ] = useState<boolean>(false);
 	const [inviteLoading, setInviteLoading ] = useState<boolean>(false);
 	const [ searchError, setSearchError ] = useState<string>('');
 	const [ invitationErrorMsg, setInvitationErrorMsg ] = useState<string>('');
 	const [ invited, setinvited ] = useState<string>('');
 	const [resp, setResp ] = useState<string>('');
 	const [refCode, setRefCode ] = useState<string>('');
-    const [allLeaders, setAllLeaders] = useState<any>([]);
+	const [refLink, setRefLink ] = useState<string>('');
+	const [referral, setReferral ] = useState<string>('');
+	const [allLeaders, setAllLeaders] = useState<any>([]);
 	useEffect(() => { 
+		if (copySuccess) {
+			setTimeout(() => {
+				setCopySuccess(false)
+			}, 3000)
+		}
 		if (resp) {
 			setTimeout(() => {
 				setResp('')
@@ -67,10 +75,10 @@ const LeaderBoard = () => {
 
     const { loading, data } = useQuery(FETCH_ALL_LEADERS)
     
-    if (data) {
-        console.log('+++', data.getAllLeaders)
-        //setAllLeaders(data.getAllLeaders)
-    }
+    // if (data) {
+    //     console.log('+++', data.getAllLeaders)
+    //     //setAllLeaders(data.getAllLeaders)
+    // }
 
 	const [ checkPosition ] = useMutation(FETCH_USER, {
 		variables: {
@@ -80,6 +88,7 @@ const LeaderBoard = () => {
 			setFoundUser(result.data.checkPosition);
 
 			setRefCode(result.data.checkPosition.referralCode)
+			setRefLink(result.data.checkPosition.referralLink)
 			setIsLoading(false);
 			console.log('The rws: ', result.data.checkPosition);
 		},
@@ -101,7 +110,6 @@ const LeaderBoard = () => {
 			setResp(result.data.joinByReferral.message);
 			setInviteLoading(false)
 			setinvited('')
-			console.log('The >>>>>>>>>>>>>>>>>>: ', result.data.joinByReferral.message);
 		},
 		onError(err) {
 			setInvitationErrorMsg('Error occurr while sending invitation, Please try again later');
@@ -124,6 +132,12 @@ const LeaderBoard = () => {
 		let query = event.target.value;
 		setinvited(query);
 		console.log('==>', query);
+	};
+	const handleCopy = (event: MouseEvent<HTMLElement>) => {
+
+		navigator.clipboard.writeText(refLink);
+		setCopySuccess(true)
+
 	};
 
 
@@ -199,9 +213,16 @@ const LeaderBoard = () => {
 							</span>
 								</p>
 								<p>
-										<Input value={refCode} disabled={true} contentEditable={false} style={{ width: '50%', height: '40px' }} />{' '}
-									<span className="btn-sm" onClick={() => alert()}>
-										Copy
+										<Input value={refLink}  disabled={true} contentEditable={false} style={{ width: '50%', height: '40px' }} />{' '}
+										<span>
+											<button className="btn-smm" onClick={handleCopy}>Copy</button>
+											{
+												copySuccess ?
+													<div style={{ "color": "green" }}>
+													Link copied
+            										</div> : null
+											}
+										
 							</span>
 								</p>
 							</div>
@@ -220,7 +241,8 @@ const LeaderBoard = () => {
 						<tr>
 							<th>Rank</th>
 							<th>Name in full</th>
-							<th>Scores</th>
+							<th>Email</th>
+							<th>Ithcoin</th>
 						</tr>
 
 						
@@ -235,6 +257,7 @@ const LeaderBoard = () => {
 											<tr>
 											<td>{index + 1}</td>
 											<td>{item.fullName}</td>
+											<td>{item.email}</td>
 												<td>{item.point}</td>
 											</tr>
 										</tbody>
@@ -264,6 +287,7 @@ const FETCH_USER = gql`
 			email
 			position
 			referralCode
+			referralLink
 		}
 	}
 `;

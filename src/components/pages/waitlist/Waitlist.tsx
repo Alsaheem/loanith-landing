@@ -2,6 +2,7 @@ import React, { useState, useEffect, ChangeEvent, MouseEvent } from 'react';
 import { Input, Button, Collapse, Row, Col, Card, Select, Divider } from 'antd';
 import { LoadingOutlined } from '@ant-design/icons';
 import { useQuery, useMutation } from '@apollo/react-hooks';
+import { useParams } from 'react-router-dom';
 import gql from 'graphql-tag';
 
 import './Waitlist.css';
@@ -19,12 +20,20 @@ const Waitlist = () => {
 	const [ salaryRange, setSalaryRange ] = useState<string>('');
 	const [ employedStatus, setEmployedStatus ] = useState<string>('');
 	const [ userState, setUserState ] = useState<string>('');
+	const [refCode, setRefCode ] = useState<string>('');
 	const [ isLoading, setIsLoading ] = useState<boolean>(false);
 	const [ sentStatus, setSentStatus ] = useState<string>('');
 	const [ sentError, setSentError ] = useState<string>('');
 
+	const { token } = useParams();
+	
+
 	useEffect(
 		() => {
+			if (token) {
+				console.log('======iii==', token)
+				setRefCode(token);
+			}
 			if (sentStatus || sentError) {
 				setTimeout(() => {
 					setSentStatus('');
@@ -55,7 +64,8 @@ const Waitlist = () => {
 			email: emailChange,
 			salaryRange: salaryRange,
 			employmentStatus: employedStatus,
-			state: userState
+			state: userState,
+			referralCode:refCode
 		},
 		update(_, result) {
 			console.log('Mess Res =======', result.data.joinWaitingList.email);
@@ -69,7 +79,9 @@ const Waitlist = () => {
 			setUserState('');
 		},
 		onError(err) {
-			setSentError('Email does not seem to exist, Please try again later');
+			setSentError(
+				'Sorry, the email you provided has either been used before or is invalid. Please Provide a valid email or visit https://www.loanith.com/leaderboard to check your status'
+			);
 			setIsLoading(false);
 		}
 	});
@@ -84,7 +96,7 @@ const Waitlist = () => {
 				<Row gutter={{ xs: 8, sm: 16, md: 16, lg: 32 }}>
 					<Col className="gutter-row" xs={24} sm={24} md={8} lg={8} xl={8}>
 						<p className="text-style">
-							Increased interest free period: <br />Each Point equals 1 hour addition to your interest
+							Increased interest free period: <br />Each Point equals Ithcoin addition to your interest
 							free period to a maximum of 1 year.
 						</p>
 					</Col>
@@ -122,12 +134,11 @@ const Waitlist = () => {
 							>
 								<div style={{ padding: '20px' }}>
 									Leading the board could be so easy.<br />
-									Join waitlist by completing the form below to earn your first 100 points. 1 point =
-									1 hkHiur <br />
-									Invite your friend via email and social media handles. You earn 50 points when each
-									friend joins the waitlist using your referral link.<br />
-									Encourage your friends to invite others to join the waitlist. You earn 10 points
-									when friends of your friend joints the waitlist.<br />
+									Join waitlist by completing the form below to earn your first 100 Ithcoins.<br />
+									Invite your friend via email and social media handles. You earn 50 Ithcoins when
+									each friend joins the waitlist using your referral link<br />
+									Encourage your friends to invite others to join the waitlist. You earn 10 Ithcoins
+									when each friend of your referrals join the waitlist<br />
 								</div>
 							</div>
 						</Col>
@@ -215,6 +226,7 @@ const JOIN_WAIT_LIST = gql`
 		$state: String
 		$employmentStatus: String
 		$salaryRange: String
+		$referralCode:String
 	) {
 		joinWaitingList(
 			joinWaitingListInput: {
@@ -223,6 +235,7 @@ const JOIN_WAIT_LIST = gql`
 				state: $state
 				employmentStatus: $employmentStatus
 				salaryRange: $salaryRange
+				referralCode:$referralCode
 			}
 		) {
 			email

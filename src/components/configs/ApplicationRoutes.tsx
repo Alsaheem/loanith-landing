@@ -22,6 +22,8 @@ const ApplicationRoutes = () => {
           <Route path="/contact" exact component={Contact} />
           <Route path="/support" exact component={Support} />
           <Route path="/waitlist" exact component={Waitlist} />
+          <Route path="/waitlist/:token" exact component={Waitlist} />
+          <Route path="/leaderboard" exact component={LeaderBoard} />
           <Route path="/leaderboard" exact component={LeaderBoard} />
           <Route path="/privacy" exact component={Privacy} />
           <Route path="/terms" exact component={Terms} />

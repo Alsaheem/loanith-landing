@@ -63,6 +63,18 @@
     cursor: pointer;
     border-radius: 5px;
 }
+ .btn-smm {
+    background-color: #E96B03;
+    color: #FBF9F7;
+    border: 0px;
+    width: 7%;
+    height: '30px';
+    font-size: 14px;
+    justify-content: center;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
 
 .userPosition {
     display: flex;
